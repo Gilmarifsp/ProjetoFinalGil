@@ -35,14 +35,15 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cadastrobutton1 = new System.Windows.Forms.Button();
             this.Atualizarbutton1 = new System.Windows.Forms.Button();
             this.excluirbutton1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1Pesquisa = new System.Windows.Forms.TextBox();
             this.button2PesquisarCliente = new System.Windows.Forms.Button();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // ClientesListView
@@ -55,13 +56,14 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
+            this.columnHeader9,
             this.columnHeader2,
             this.columnHeader8});
             this.ClientesListView.FullRowSelect = true;
             this.ClientesListView.HideSelection = false;
-            this.ClientesListView.Location = new System.Drawing.Point(39, 37);
+            this.ClientesListView.Location = new System.Drawing.Point(39, 40);
             this.ClientesListView.Name = "ClientesListView";
-            this.ClientesListView.Size = new System.Drawing.Size(730, 377);
+            this.ClientesListView.Size = new System.Drawing.Size(767, 377);
             this.ClientesListView.TabIndex = 0;
             this.ClientesListView.UseCompatibleStateImageBehavior = false;
             this.ClientesListView.View = System.Windows.Forms.View.Details;
@@ -94,6 +96,16 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "CPF";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 6;
+            this.columnHeader2.Text = "CIDADE";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.DisplayIndex = 7;
+            this.columnHeader8.Text = "UF";
             // 
             // cadastrobutton1
             // 
@@ -153,13 +165,9 @@
             this.button2PesquisarCliente.UseVisualStyleBackColor = true;
             this.button2PesquisarCliente.Click += new System.EventHandler(this.button2PesquisarCliente_Click);
             // 
-            // columnHeader2
+            // columnHeader9
             // 
-            this.columnHeader2.Text = "CIDADE";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "UF";
+            this.columnHeader9.Text = "NUM";
             // 
             // ListaCliente
             // 
@@ -201,5 +209,6 @@
         private System.Windows.Forms.Button button2PesquisarCliente;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }
