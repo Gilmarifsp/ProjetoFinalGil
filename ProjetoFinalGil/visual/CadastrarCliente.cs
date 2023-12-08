@@ -25,7 +25,7 @@ namespace ProjetoFinalGil
             InitializeComponent();
             opcao = "inserir";
         }
-        public CadastrarCliente(int ID, string NOME, string EMAIL, string TELEFONE, string ENDERECO, string Sexo,string CIDADE,string UF)
+        public CadastrarCliente(int ID, string NOME, string EMAIL, string TELEFONE, string ENDERECO, string Sexo,string numero,string CIDADE,string UF)
         {
 
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace ProjetoFinalGil
             textBox3.Text = EMAIL;
             textBox4.Text = TELEFONE;
             txtEndereco.Text = ENDERECO;
+            txtN.Text = numero;
             txtCidade.Text = CIDADE;
             comboBox2.Text = UF;
 
@@ -45,20 +46,6 @@ namespace ProjetoFinalGil
 
             else radioButton2.Checked = true;
         }
-
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
- 
-
 
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

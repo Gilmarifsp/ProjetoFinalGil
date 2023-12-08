@@ -37,6 +37,7 @@ namespace ProjetoFinalGil
                     lista.SubItems.Add(cliente.Telefone);
                     lista.SubItems.Add(cliente.Endereco);
                     lista.SubItems.Add(cliente.Sexo);
+                    lista.SubItems.Add(cliente.Numero.ToString());
                     lista.SubItems.Add(cliente.Cidade);
                     lista.SubItems.Add(cliente.UF);
                     ClientesListView.Items.Add(lista);
@@ -70,10 +71,11 @@ namespace ProjetoFinalGil
             string TELEFONE = ClientesListView.Items[index].SubItems[3].Text;
             string ENDERECO = ClientesListView.Items[index].SubItems[4].Text;
             string CPF = ClientesListView.Items[index].SubItems[5].Text;
-            string CIDADE = ClientesListView.Items[index].SubItems[6].Text;
-            string UF = ClientesListView.Items[index].SubItems[7].Text;
+            string NUM = ClientesListView.Items[index].SubItems[6].Text;
+            string CIDADE = ClientesListView.Items[index].SubItems[7].Text;
+            string UF = ClientesListView.Items[index].SubItems[8].Text;
 
-            CadastrarCliente cadastrarCliente = new CadastrarCliente(ID, NOME, EMAIL, TELEFONE, ENDERECO, CPF,CIDADE, UF);
+            CadastrarCliente cadastrarCliente = new CadastrarCliente(ID, NOME, EMAIL, TELEFONE, ENDERECO, CPF,NUM, CIDADE, UF);
 
             cadastrarCliente.ShowDialog();
             this.Visible = true;
@@ -129,6 +131,7 @@ namespace ProjetoFinalGil
                     listViewItem.SubItems.Add(cliente.Telefone);
                     listViewItem.SubItems.Add(cliente.Endereco);
                     listViewItem.SubItems.Add(cliente.Sexo);
+                    listViewItem.SubItems.Add(cliente.Numero.ToString());
                     listViewItem.SubItems.Add(cliente.Cidade);
                     listViewItem.SubItems.Add(cliente.UF);
                     ClientesListView.Items.Add(listViewItem);

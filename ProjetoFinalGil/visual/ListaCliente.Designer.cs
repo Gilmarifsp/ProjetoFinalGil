@@ -72,40 +72,51 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
+            this.columnHeader1.DisplayIndex = 0;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 7;
+            this.columnHeader2.Text = "CIDADE";
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "NOME";
+            this.columnHeader3.DisplayIndex = 1;
             this.columnHeader3.Width = 164;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "EMAIL";
+            this.columnHeader4.DisplayIndex = 2;
             this.columnHeader4.Width = 129;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "TELEFONE";
+            this.columnHeader5.DisplayIndex = 3;
             this.columnHeader5.Width = 84;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "ENDEREÇO";
+            this.columnHeader6.DisplayIndex = 4;
             this.columnHeader6.Width = 80;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "CPF";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.DisplayIndex = 6;
-            this.columnHeader2.Text = "CIDADE";
+            this.columnHeader7.DisplayIndex = 5;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 7;
+            this.columnHeader8.DisplayIndex = 8;
             this.columnHeader8.Text = "UF";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "NUM";
+            this.columnHeader9.DisplayIndex = 6;
             // 
             // cadastrobutton1
             // 
@@ -164,10 +175,6 @@
             this.button2PesquisarCliente.Text = "Pesquisar";
             this.button2PesquisarCliente.UseVisualStyleBackColor = true;
             this.button2PesquisarCliente.Click += new System.EventHandler(this.button2PesquisarCliente_Click);
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "NUM";
             // 
             // ListaCliente
             // 

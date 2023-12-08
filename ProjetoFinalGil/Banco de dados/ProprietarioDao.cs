@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjetoFinalGil
 {
@@ -18,20 +20,37 @@ namespace ProjetoFinalGil
             Con = new Conexao();
             Cmd = new SqlCommand();
         }
-        public void Inserir(Proprietario usuario)
+        public void Excluir(int ID)
         {
             Cmd.Connection = Con.ReturnConnection();
-            Cmd.CommandText = @"INSERT INTO PROPRIETARIO VALUES (@nome, @sexo, @cpf, @email, @telefone, @endereco)";
+            Cmd.CommandText = @"Delete from PROPRIETARIO where ID = @id";
+            Cmd.Parameters.AddWithValue("@id", ID);
+            try
+            {
+                Cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Erro ao excluir Proprietario no banco.\n");
+            }
+            finally
+            {
+                Con.CloseConnection();
+            }
+        }
 
-            Cmd.Parameters.AddWithValue("@nome", usuario.Nome);
-            Cmd.Parameters.AddWithValue("@sexo", usuario.SEXO);
-            Cmd.Parameters.AddWithValue("@cpf", usuario.CPF);
-            Cmd.Parameters.AddWithValue("@email", usuario.EMAIL);
-            Cmd.Parameters.AddWithValue("@telefone", usuario.TELEFONE);
-            Cmd.Parameters.AddWithValue("@endereco", usuario.ENDERECO);
-        
- 
-
+        public void Alterar(Clientes usuarios)
+        {
+            Cmd.Connection = Con.ReturnConnection();
+            Cmd.CommandText = @"UPDATE PROPRIETARIO SET NOME = @nome, EMAIL = @email, TELEFONE = @telefone, ENDERECO = @endereco, 
+            SEXO = @sexo, CIDADE = @cidade, UF = @uf WHERE ID = @id";
+            Cmd.Parameters.AddWithValue("@id", usuarios.Id);
+            Cmd.Parameters.AddWithValue("@nome", usuarios.Nome);
+            Cmd.Parameters.AddWithValue("@sexo", usuarios.Sexo);
+            //Cmd.Parameters.AddWithValue("@cpf", usuarios.CPF);
+            Cmd.Parameters.AddWithValue("@email", usuarios.Email);
+            Cmd.Parameters.AddWithValue("@telefone", usuarios.Telefone);
+            Cmd.Parameters.AddWithValue("@endereco", usuarios.Endereco);
 
 
             try
@@ -47,52 +66,6 @@ namespace ProjetoFinalGil
                 Con.CloseConnection();
             }
         }
-        public void Excluir(int id)
-        {
-            Cmd.Connection = Con.ReturnConnection();
-            Cmd.CommandText = @"Delete from usuarios where id = @id";
-            Cmd.Parameters.AddWithValue("@id", id);
-            try
-            {
-                Cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                throw new Exception("Erro ao excluir usuário.");
-            }
-            finally
-            {
-                Con.CloseConnection();
-            }
-        }
-        public void Alterar(Proprietario usuarios)
-        {
-            Cmd.Connection = Con.ReturnConnection();
-            Cmd.CommandText = @"UPDATE Usuarios SET NOME = @nome, SEXO = @sexo, CPF = @cpf, EMAIL = @email, TELEFONE = @telefone, ENDERECO = @endereco WHERE ID = @id";
-            Cmd.Parameters.AddWithValue("@id", usuarios.Id);
-            Cmd.Parameters.AddWithValue("@nome", usuarios.Nome);
-            Cmd.Parameters.AddWithValue("@sexo", usuarios.SEXO);
-            Cmd.Parameters.AddWithValue("@cpf", usuarios.CPF);
-            Cmd.Parameters.AddWithValue("@email", usuarios.EMAIL);
-            Cmd.Parameters.AddWithValue("@telefone", usuarios.TELEFONE);
-            Cmd.Parameters.AddWithValue("@endereço", usuarios.ENDERECO);
-
-            try
-            {
-                Cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                throw new Exception("\"Erro: Problemas ao alterar usuario no banco.\\n\" + err.Message");
-
-
-            }
-            finally
-            {
-                Con.CloseConnection();
-            }
-        }
-
 
         public List<Proprietario> ListarTodosUsuarios()
         {
@@ -122,7 +95,35 @@ namespace ProjetoFinalGil
 
             return listaDeUsuarios;
         }
+        public void Inserir(Proprietario usuario)
+        {
+            Cmd.Connection = Con.ReturnConnection();
+            Cmd.CommandText = @"INSERT INTO PROPRIETARIO VALUES (@nome, @sexo, @cpf, @email, @telefone, @endereco)";
+
+            Cmd.Parameters.AddWithValue("@nome", usuario.Nome);
+            Cmd.Parameters.AddWithValue("@sexo", usuario.SEXO);
+            Cmd.Parameters.AddWithValue("@cpf", usuario.CPF);
+            Cmd.Parameters.AddWithValue("@email", usuario.EMAIL);
+            Cmd.Parameters.AddWithValue("@telefone", usuario.TELEFONE);
+            Cmd.Parameters.AddWithValue("@endereco", usuario.ENDERECO);
 
 
+            try
+            {
+                Cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao inserir Proprietario no banco.\n" + err.Message);
+            }
+            finally
+            {
+                Con.CloseConnection();
+            }
+
+
+
+
+        }
     }
 }

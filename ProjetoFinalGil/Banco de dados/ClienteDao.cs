@@ -23,34 +23,7 @@ namespace ProjetoGil
             Con = new Conexao();
             Cmd = new SqlCommand();
         }
-        /*public void Inserir(Clientes usuario)
-        {
-            Cmd.Connection = Con.ReturnConnection();
-            Cmd.CommandText = @"INSERT INTO CLIENTES VALUES (@nome, @email, @telefone, @endereco, @sexo)";
 
-            Cmd.Parameters.AddWithValue("@nome", usuario.Nome);
-            Cmd.Parameters.AddWithValue("@email", usuario.Email);
-            Cmd.Parameters.AddWithValue("@telefone", usuario.Telefone);
-            Cmd.Parameters.AddWithValue("@endereco", usuario.Endereco);
-            Cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
-
-
-
-
-            try
-            {
-                Cmd.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao inserir clientes no banco.\n" + err.Message);
-            }
-            finally
-            {
-                Con.CloseConnection();
-            }
-        }
-        */
         public void Excluir(int ID)
         {
  

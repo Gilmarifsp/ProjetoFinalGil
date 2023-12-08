@@ -21,24 +21,6 @@ namespace ProjetoFinalGil
         private string _Sexo;
 
 
-        public Clientes(string nome, string email, string telefone, string endereco, int numero,string cidade, string uf, string sexo)
-        {
-
-            Nome = nome;
-            Email = email;
-            Telefone = telefone;
-            Endereco = endereco;
-            Numero = numero;
-            Cidade = cidade;
-            UF = uf; 
-            Sexo = sexo;
-
-
-
-
-
-
-        }
         public Clientes(int id, string nome, string email, string telefone, string endereco, int numero, string cidade, string uf, string sexo)
         {
             _id = id;
