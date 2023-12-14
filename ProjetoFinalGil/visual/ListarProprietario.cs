@@ -43,11 +43,6 @@ namespace ProjetoFinalGil
             }
         }
 
-        private void ListaProprietario_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void Cadastrarbutton1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -55,26 +50,6 @@ namespace ProjetoFinalGil
             cadastrarProprietario.ShowDialog();
             this.Visible = true;
             AtualizarListView();
-        }
-
-        private void Atualizarbutton1_Click(object sender, EventArgs e)
-        {
-            Atualizarbutton1.Visible = false;
-            Excluirbutton1.Visible = false;
-        }
-
-        private void excluirbutton1_Click(object sender, EventArgs e)
-        {
-            int index = ProprietariolistView1.FocusedItem.Index;
-            int id = int.Parse(ProprietariolistView1.Items[index].SubItems[0].Text);
-            ProprietarioDao usuariosFxcluir = new ProprietarioDao();
-            usuariosFxcluir.Excluir(id);
-            AtualizarListView();
-        }
-
-        private void ProprietarioListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void ListarProprietario_Load(object sender, EventArgs e)
@@ -91,14 +66,18 @@ namespace ProjetoFinalGil
         {
             int index = ProprietariolistView1.FocusedItem.Index;
             int id = int.Parse(ProprietariolistView1.Items[index].SubItems[0].Text);
-            string nome = ProprietariolistView1.Items[index].SubItems[2].Text;
-            string Sexo = ProprietariolistView1.Items[index].SubItems[3].Text;
-            string CPF = ProprietariolistView1.Items[index].SubItems[4].Text;
-            string EMAIL = ProprietariolistView1.Items[index].SubItems[5].Text;
-            string TELEF = ProprietariolistView1.Items[index].SubItems[6].Text;
-            string ENDER = ProprietariolistView1.Items[index].SubItems[7].Text;
+            string nome = ProprietariolistView1.Items[index].SubItems[1].Text;
+            string Sexo = ProprietariolistView1.Items[index].SubItems[2].Text;
+            string CPF = ProprietariolistView1.Items[index].SubItems[3].Text;
+            string EMAIL = ProprietariolistView1.Items[index].SubItems[4].Text;
+            string TELEF = ProprietariolistView1.Items[index].SubItems[5].Text;
+            string ENDER = ProprietariolistView1.Items[index].SubItems[6].Text;
 
             CadastrarProprietario cadastrarProprietario = new CadastrarProprietario(id,nome,Sexo,CPF,EMAIL,TELEF,ENDER);
+
+            cadastrarProprietario.ShowDialog();
+            this.Visible = true;
+            AtualizarListView();
 
         }
 
@@ -110,6 +89,12 @@ namespace ProjetoFinalGil
             usuariosFxcluir.Excluir(id);
             AtualizarListView();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
-  
+

@@ -39,12 +39,14 @@
             this.Atualizarbutton1 = new System.Windows.Forms.Button();
             this.Excluirbutton1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // ProprietariolistView1
             // 
             this.ProprietariolistView1.BackColor = System.Drawing.Color.Azure;
             this.ProprietariolistView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -54,7 +56,7 @@
             this.ProprietariolistView1.HideSelection = false;
             this.ProprietariolistView1.Location = new System.Drawing.Point(12, 12);
             this.ProprietariolistView1.Name = "ProprietariolistView1";
-            this.ProprietariolistView1.Size = new System.Drawing.Size(776, 417);
+            this.ProprietariolistView1.Size = new System.Drawing.Size(932, 417);
             this.ProprietariolistView1.TabIndex = 0;
             this.ProprietariolistView1.UseCompatibleStateImageBehavior = false;
             this.ProprietariolistView1.View = System.Windows.Forms.View.Details;
@@ -63,26 +65,32 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "NOME";
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "SEXO";
+            this.columnHeader2.Width = 90;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "CPF";
+            this.columnHeader3.Width = 90;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "EMAIL";
+            this.columnHeader4.Width = 150;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "TELEFONE";
+            this.columnHeader5.Width = 90;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "ENDERECO";
+            this.columnHeader6.Width = 300;
             // 
             // Cadastrarbutton1
             // 
@@ -123,6 +131,11 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "SAIR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "ID";
             // 
             // ListarProprietario
             // 
@@ -158,5 +171,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
